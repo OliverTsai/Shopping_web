@@ -22,7 +22,7 @@ $(document).ready(function() {
     // 發送 AJAX 請求獲取文章數據
     function showSelectedFruit() {
         var selectedCategory = $('#category').val();
-        var url = 'https://oliverwork.000webhostapp.com/wp-json/wp/v2/posts';
+        var url = 'https://only-chintea.com/wp-json/wp/v2/posts';
 
         if (selectedCategory !== 'all') {
             url += '?categories=' + selectedCategory;
