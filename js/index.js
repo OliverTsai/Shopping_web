@@ -22,7 +22,7 @@ $(document).ready(function() {
     // 發送 AJAX 請求獲取文章數據
     function showSelectedFruit() {
         var selectedCategory = $('#category').val();
-        var url = 'https://only-chintea.com/wp-json/wp/v2/posts';
+        var url = 'https://oliverwork.000webhostapp.com/wp-json/wp/v2/posts';
 
         if (selectedCategory !== 'all') {
             url += '?categories=' + selectedCategory;
@@ -54,18 +54,18 @@ $(document).ready(function() {
 
                     // 發送 AJAX 請求獲取特色圖片的URL
                     $.ajax({
-                        url: 'https://only-chintea.com/wp-json/wp/v2/media/' + featuredMediaId,
+                        url: 'https://oliverwork.000webhostapp.com/wp-json/wp/v2/media/' + featuredMediaId,
                         method: 'GET',
                         success: function(mediaResponse) {
                             var featuredImageUrl = mediaResponse.source_url;
 
                             // 創建表格的行並將標題、特色圖片和金額插入
-                            var row = $('<table>');
-                            var imageCell = $('<thead>').html('<a href="post.html?id=' + postId + '"><img src="' + featuredImageUrl + '"></a>');
-                            var titleCell = $('<tbody>').text(title);                            
-                            var moneyCell = $('<tfoot>').text('價格:' + money);
+                            var row = $('<td>');
+                            var imageCell = $('<div class=container>').html('<a href="post.html?id=' + postId + '"><img src="' + featuredImageUrl + '"></a>');
+                            var titleCell = $('<p>').text(title);                            
+                            var moneyCell = $('<p>').text('價格:' + money);
 
-                            row.append(titleCell, imageCell, moneyCell);
+                            row.append( imageCell,titleCell, moneyCell);
 
                             // 將整個行插入表格中
                             tableElement.append('<td>');
