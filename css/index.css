@@ -13,22 +13,31 @@ th {
 
 
 }
-/* 將圖片置中 */
-img {
-    display: block;
-    margin: 0 auto;
-  }
-  
   /* 等比例縮小到215px * 215px */
 img {
-    /* max-width: 215px; */
+    max-width: 215px;
     max-height: 215px;
     width: auto;
-    height: auto;
-  }
-  .center-text {
+    height: 100%;
+    background-size: cover; /* 使用cover來等比例縮放圖片，並填滿容器 */
+    /* align-items: center; */
+}
+.center-text {
     display: flex;
     justify-content: center; /* 水平置中 */
     align-items: center; /* 垂直置中 */
     height: 100%; /* 可以根據需要調整高度，保證置中效果正確 */
+  }
+  .container {
+    /* 設定容器寬高和其他樣式 */
+    width: 215px; /* 請自行設定容器寬度 */
+    height: 215px; /* 請自行設定容器高度 */
+    background-color: #8d8d8d;
+    position: relative;
+    overflow: hidden; /* 隱藏超出容器範圍的內容 */
+  }
+  .container2 {
+    display: flex;
+    flex-wrap: wrap; /* 設定換行 */
+    justify-content: flex-start; /* 控制主軸對齊方式，這裡使用左對齊 */
   }
