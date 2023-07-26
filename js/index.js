@@ -54,7 +54,7 @@ $(document).ready(function() {
 
                     // 發送 AJAX 請求獲取特色圖片的URL
                     $.ajax({
-                        url: 'https://oliverwork.000webhostapp.com/wp-json/wp/v2/media/' + featuredMediaId,
+                        url: 'https://only-chintea.com/wp-json/wp/v2/media/' + featuredMediaId,
                         method: 'GET',
                         success: function(mediaResponse) {
                             var featuredImageUrl = mediaResponse.source_url;
